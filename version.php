@@ -18,6 +18,6 @@ $plugin->cron      = 0;
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->release   = 'TODO';
 
-$plugin->dependencies = array(
-    'report_up1synopsis' => 2014021300,
-);
+$plugin->dependencies = [
+    'report_up1synopsis' => 2020102100,
+];
