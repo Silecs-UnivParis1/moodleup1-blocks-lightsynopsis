@@ -2,26 +2,22 @@
 /**
  * Light synopsis block.
  *
- * @package    block
- * @subpackage lightsynopsis
- * @copyright  2012-2014 Silecs {@link http://www.silecs.info/societe}
+ * @package    block_lightsynopsis
+ * @copyright  2012-2020 Silecs {@link http://www.silecs.info/societe}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$capabilities = array(
-
-    'block/lightsynopsis:addinstance' => array(
+$capabilities = [
+    'block/lightsynopsis:addinstance' => [
         'riskbitmask' => 0,
-
         'captype' => 'read',
         'contextlevel' => CONTEXT_COURSE,
-        'archetypes' => array(
+        'archetypes' => [
             'editingteacher' => CAP_ALLOW,
             'manager' => CAP_ALLOW
-        ),
-
+        ],
         'clonepermissionsfrom' => 'moodle/site:manageblocks'
-    ),
-);
+    ],
+];

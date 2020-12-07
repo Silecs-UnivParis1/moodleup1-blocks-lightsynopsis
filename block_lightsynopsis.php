@@ -2,20 +2,20 @@
 /**
  * Light synopsis block.
  *
- * @package    block
- * @subpackage lightsynopsis
- * @copyright  2012-2014 Silecs {@link http://www.silecs.info/societe}
+ * @package    block_lightsynopsis
+ * @copyright  2012-2020 Silecs {@link http://www.silecs.info/societe}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 
-class block_lightsynopsis extends block_base {
+class block_lightsynopsis extends block_base
+{
+
     public function init() {
         $this->title = 'À propos de cet espace';
-    }
-    
+    }    
 
     public function get_content() {
         if ($this->content !== null) {
@@ -27,8 +27,8 @@ class block_lightsynopsis extends block_base {
         $avalider = up1_meta_get_text($course->id, 'up1avalider', false);
         $datevalid = up1_meta_get_text($course->id, 'datevalid', false);
         $cdate = usergetdate($course->startdate);
-        $dispdate = 'Créé le ' . $cdate['mday'].'/'.$cdate['mon'].'/'.$cdate['year']
-                . (($avalider == 1 && $datevalid == 0) ? " (en attente d'approbation)" : '');
+        $dispdate = sprintf('Créé le %d/%d/%d %s', $cdate['mday'], $cdate['mon'], $cdate['year'],
+                (($avalider == 1 && $datevalid == 0) ? " (en attente d'approbation)" : ''));
 
         $this->content =  new stdClass;
         $courseformatter = new courselist_format('list');
@@ -74,8 +74,7 @@ class block_lightsynopsis extends block_base {
     }
     
     function applicable_formats() {
-        return array('course' => true,
-                     'all' => false);
+        return ['course' => true, 'all' => false];
     }
     
 
