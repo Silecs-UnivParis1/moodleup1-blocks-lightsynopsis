@@ -86,7 +86,7 @@ class reporting
             $role = $DB->get_record('role', ['shortname' => $srole]);
             $cohorts = $this->get_enrolled_cohorts([$role->id]);
             if (empty($cohorts)) {
-                $res .= "$title " . \get_string('Nocohort', 'report_up1synopsis') . "<br />\n";
+                $res .= "$title aucune cohorte inscrite.<br />\n";
             } else {
                 $res .= "$title";
                 $res .= "<ul>";
