@@ -9,7 +9,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2020111502;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->version   = 2020120800;        // The current plugin version (Date: YYYYMMDDXX)
 $plugin->requires  = 2020060900;        // Requires this Moodle version
 $plugin->component = 'block_lightsynopsis';       // Full name of the plugin (used for diagnostics)
 
@@ -18,5 +18,5 @@ $plugin->maturity  = MATURITY_STABLE;
 $plugin->release   = 'TODO';
 
 $plugin->dependencies = [
-    'report_up1synopsis' => 2020102100,
+    'local_up1_courselist' => 2020100300,
 ];
